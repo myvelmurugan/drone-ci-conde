@@ -4,12 +4,16 @@ name: default
 
 metadata:
   namespace: drone
-steps:
-- name: ping
-  image: redis
-  commands:
-  - redis-cli -h 127.0.0.1 ping
 
-services:
-- name: cache
-  image: redis
+steps:
+- name: backend
+  image: golang
+  commands:
+  - go build
+  - go test
+
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - npm test
