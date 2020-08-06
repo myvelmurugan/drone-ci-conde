@@ -2,12 +2,20 @@ kind: pipeline
 type: kubernetes
 name: default
 
-steps:
-- name: ping
-  image: redis
-  commands:
-  - redis-cli -h 127.0.0.1 ping
+metadata:
+  namespace: drone
 
-services:
-- name: cache
-  image: redis
+steps:
+- name: backend
+  image: golang
+  resources:
+    requests:
+      cpu: 250
+      memory: 250MiB
+    limits:
+      cpu: 500
+      memory: 500MiB
+  commands:
+  - go build
+  - go test
+  - go run main.go -http=:3000

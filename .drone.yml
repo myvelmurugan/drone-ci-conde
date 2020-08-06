@@ -6,8 +6,16 @@ metadata:
   namespace: drone
 
 steps:
-- name: frontend
-  image: node
+- name: backend
+  image: golang
+  resources:
+    requests:
+      cpu: 250
+      memory: 250MiB
+    limits:
+      cpu: 500
+      memory: 500MiB
   commands:
-  - npm install
-  - npm test
+  - go build
+  - go test
+  - go run main.go -http=:3000
