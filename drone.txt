@@ -2,9 +2,6 @@ kind: pipeline
 type: kubernetes
 name: default
 
-metadata:
-  namespace: drone
-
 steps:
 - name: backend
   image: golang
