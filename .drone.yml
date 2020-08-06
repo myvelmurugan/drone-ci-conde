@@ -1,6 +1,7 @@
 kind: pipeline
 type: kubernetes
 name: drone
+namespace: drone
 
 steps:
 - name: greeting
@@ -8,3 +9,4 @@ steps:
   commands:
   - echo hello
   - echo world
+
