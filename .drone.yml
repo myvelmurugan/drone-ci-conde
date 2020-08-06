@@ -2,27 +2,12 @@ kind: pipeline
 type: kubernetes
 name: default
 
-metadata:
-  namespace: drone
-
 steps:
-- name: backend
-  image: golang
+- name: ping
+  image: redis
   commands:
-  - go build
-  - go test
+  - redis-cli -h 127.0.0.1 ping
 
-- name: frontend
-  image: node
-  commands:
-  - npm install
-  - npm test
-
-- name: notify
-  image: plugins/slack
-  settings:
-    webhook:
-      from_secret: webhook
-  depends_on:
-  - frontend
-  - backend
+services:
+- name: cache
+  image: redis
