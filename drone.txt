@@ -6,6 +6,17 @@ metadata:
   namespace: drone
 
 steps:
+
+- name: ping
+  image: redis
+  commands:
+  - redis-cli -h 127.0.0.1 ping
+
+services:
+- name: cache
+  image: redis
+
+
 - name: backend
   image: golang
   resources:
