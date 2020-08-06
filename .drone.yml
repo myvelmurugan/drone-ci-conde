@@ -1,7 +1,10 @@
 kind: pipeline
 type: kubernetes
 name: drone
-namespace: drone
+
+metadata:
+  namespace: drone
+
 
 steps:
 - name: greeting
