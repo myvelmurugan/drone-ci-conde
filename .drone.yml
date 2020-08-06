@@ -2,6 +2,8 @@ kind: pipeline
 type: kubernetes
 name: default
 
+metadata:
+  namespace: drone
 steps:
 - name: ping
   image: redis
