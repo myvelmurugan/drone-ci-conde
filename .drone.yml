@@ -38,7 +38,7 @@ services:
      from_secret: k8s_cert
    kubernetes_token:
      from_secret: k8s_token
-   plugin_kubernetes_user:
+   kubernetes_user:
      from_secret: k8s_user
   commands:
    - kubectl apply -f deployment.yml 
