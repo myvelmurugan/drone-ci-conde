@@ -29,7 +29,7 @@ services:
   - go build
 
 - name: deliver
-  image: vel123/drone-kube:1
+  image: sinlead/drone-kubectl
   settings:
    kubernetes_server:
      from_secret: k8s_server
