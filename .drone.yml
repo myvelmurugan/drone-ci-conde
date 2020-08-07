@@ -30,7 +30,7 @@ services:
   - go test
 
 - name: deliver
-  image: sinlead/drone-kubectl
+  image: myvelmurugan/drone-kubectl
   settings:
    kubernetes_server:
      from_secret: k8s_server
@@ -38,7 +38,5 @@ services:
      from_secret: k8s_cert
    kubernetes_token:
      from_secret: k8s_token
-   kubernetes_user:
-     from_secret: k8s_user
   commands:
    - kubectl apply -f deployment.yml 
