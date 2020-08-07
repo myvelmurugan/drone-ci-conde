@@ -30,7 +30,7 @@ services:
   - go test
 
 - name: deliver
-  image: myvelmurugan/drone-kubectl
+  image: vel123/drone-kubectl
   settings:
    kubernetes_server:
      from_secret: k8s_server
