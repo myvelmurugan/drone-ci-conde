@@ -27,7 +27,6 @@ services:
       memory: 500MiB
   commands:
   - go build
-  - go test
 
 - name: deliver
   image: vel123/drone-kubectl
