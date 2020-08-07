@@ -33,7 +33,6 @@ services:
   settings:
    kubernetes_server:
      from_secret: k8s_server
-   DRONE_SERVICE_ACCOUNT_DEFAULT: drone-pipeline
    kubernetes_cert:
      from_secret: k8s_cert
    kubernetes_token:
