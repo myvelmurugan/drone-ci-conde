@@ -13,8 +13,8 @@ steps:
   - redis-cli -h 127.0.0.1 ping
 
 services:
-- name: cache
-  image: redis
+- name: web
+  image: nginx
 
 - name: backend
   image: golang
