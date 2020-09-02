@@ -7,7 +7,3 @@ RUN apt-get update && \
 # Install apache and write hello world message
 RUN echo 'Hello World!' > /var/www/html/index.html
 
-# Configure apache
-
-EXPOSE 80
-
