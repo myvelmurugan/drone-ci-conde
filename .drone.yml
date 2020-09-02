@@ -44,7 +44,7 @@ services:
     secret_key:
      from_secret: aws_secret_access_key
     registry: 044418114861.dkr.ecr.eu-central-1.amazonaws.com
-    dockerfile: /drone/src/drone-ci-conde/docker-projects/Dockerfile
+    dockerfile: /drone/src/drone-ci-conde/docker-projec1ts/Dockerfile
     region: eu-central-1
     tags: 2.0
 
