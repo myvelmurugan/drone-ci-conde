@@ -47,6 +47,7 @@ services:
     from_secret: auth_token
    dockerfile: /drone/src/drone-ci-conde/docker-projects/Dockerfile
    context: /drone/src/drone-ci-conde/docker-projects/
+   storage_driver: overlay
    region: eu-central-1
    tags:
     - 2.0
