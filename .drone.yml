@@ -34,8 +34,9 @@ services:
   - go build
   - go test
 
+pipeline:
 
-- name: Creating image and pushing to ECR
+- publish:
   image: plugins/docker
   settings:
     repo: gql-testrepo
