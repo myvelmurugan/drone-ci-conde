@@ -51,7 +51,7 @@ services:
    context: /drone/src/drone-ci-conde/docker-projects/
    region: eu-central-1
    tags:
-    - latest
+    - 2.0
 
 
 
