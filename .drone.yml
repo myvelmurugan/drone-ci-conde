@@ -50,7 +50,6 @@ services:
     region: eu-central-1
     tags:
     - latest
-    - 2.0
 
 
 
