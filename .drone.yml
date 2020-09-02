@@ -43,6 +43,9 @@ services:
    secret_key:
     from_secret: aws_secret_access_key
    registry: 044418114861.dkr.ecr.eu-central-1.amazonaws.com
+   volumes:
+   - name: cache
+     path: /tmp/cache
    auth:
     from_secret: auth_token
    dockerfile: /drone/src/drone-ci-conde/docker-projects/Dockerfile
@@ -65,3 +68,9 @@ services:
      from_secret: k8s_token
   commands:
    - kubectl apply -f deployment.yml 
+
+
+volumes:
+- name: cache
+  host:
+    path: /var/lib/cache
