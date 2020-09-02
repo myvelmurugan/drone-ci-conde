@@ -38,9 +38,9 @@ services:
   image: plugins/ecr
   environment:
    PLUGIN_STORAGE_DRIVER: overlay2
-   PLUGIN_CACHE_FROM: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gdp-testrepo:1
+   PLUGIN_CACHE_FROM: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gql-testrepo:1
   settings:
-   repo: gdp-testrepo
+   repo: gql-testrepo
    access_key:
     from_secret: aws_access_key_id
    secret_key:
