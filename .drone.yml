@@ -27,6 +27,22 @@ services:
       memory: 500MiB
   commands:
   - go build
+  - go test
+
+- name: Creating image and pushing to ECR
+  image: plugins/ecr
+  settings:
+    repo: gql-testrepo
+    access_key:
+     from_secret: aws_access_key_id
+    secret_key:
+     from_secret: aws_secret_access_key
+    registry: 044418114861.dkr.ecr.eu-central-1.amazonaws.com
+    dockerfile: docker-projects/Dockerfile
+    region: eu-central-1
+    tags: 2.0
+
+
 
 - name: deliver
   image: sinlead/drone-kubectl
