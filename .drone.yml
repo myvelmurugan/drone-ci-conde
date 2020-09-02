@@ -11,29 +11,6 @@ workspace:
 
 steps:
 
-- name: ping
-  image: redis
-  commands:
-  - redis-cli -h 127.0.0.1 ping
-
-services:
-- name: cache
-  image: redis
-
-
-- name: backend
-  image: golang
-  resources:
-    requests:
-      cpu: 250
-      memory: 250MiB
-    limits:
-      cpu: 500
-      memory: 500MiB
-  commands:
-  - go build
-  - go test
-
 - name: Creating an Image
   image: plugins/ecr
   settings:
@@ -68,7 +45,6 @@ services:
      from_secret: k8s_token
   commands:
    - kubectl apply -f deployment.yml 
-
 
 volumes:
 - name: cache
