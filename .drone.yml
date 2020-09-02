@@ -30,7 +30,7 @@ services:
   - go test
 
 - name: Creating image and pushing to ECR
-  image: plugins/ecr
+  image: plugins/docker
   settings:
     repo: gql-testrepo
     access_key:
