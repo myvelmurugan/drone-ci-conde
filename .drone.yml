@@ -2,6 +2,10 @@ kind: pipeline
 type: kubernetes
 name: default
 
+workspace:
+  base: /go
+  path: src/github.com/myvelmurugan/drone-ci-conde
+
 metadata:
   namespace: drone
 
@@ -30,11 +34,6 @@ services:
   - go build
   - go test
 
-
-
-workspace:
-  base: /go
-  path: src/github.com/myvelmurugan/drone-ci-conde
 
 - name: Creating image and pushing to ECR
   image: plugins/docker
