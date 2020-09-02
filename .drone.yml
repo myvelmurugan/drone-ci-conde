@@ -36,8 +36,6 @@ services:
 
 - name: Creating an Image
   image: plugins/ecr
-  environment:
-   PLUGIN_STORAGE_DRIVER: overlay2
   settings:
    repo: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gql-testrepo
    access_key:
