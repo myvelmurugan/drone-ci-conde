@@ -2,10 +2,6 @@ kind: pipeline
 type: kubernetes
 name: default
 
-workspace:
-  base: /go
-  path: src/github.com/myvelmurugan/drone-ci-conde
-
 metadata:
   namespace: drone
 
@@ -44,7 +40,7 @@ services:
     secret_key:
      from_secret: aws_secret_access_key
     registry: 044418114861.dkr.ecr.eu-central-1.amazonaws.com
-    dockerfile: docker-projects/Dockerfile
+    dockerfile: Dockerfile
     region: eu-central-1
     tags: 2.0
 
