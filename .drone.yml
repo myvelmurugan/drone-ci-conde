@@ -34,8 +34,6 @@ services:
   - go build
   - go test
 
-pipeline:
-
 - publish:
   image: plugins/docker
   settings:
