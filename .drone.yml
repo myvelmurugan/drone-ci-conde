@@ -5,6 +5,10 @@ name: default
 metadata:
   namespace: drone
 
+workspace:
+  base: /go
+  path: src/github.com/myvelmurugan/drone-ci-conde
+
 steps:
 
 - name: ping
@@ -15,6 +19,7 @@ steps:
 services:
 - name: cache
   image: redis
+
 
 - name: backend
   image: golang
