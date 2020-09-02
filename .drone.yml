@@ -36,7 +36,7 @@ services:
 
 
 - name: Creating image and pushing to ECR
-  image: plugins/docker
+  image: plugins/ecr
   settings:
     repo: gql-testrepo
     access_key:
