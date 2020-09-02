@@ -36,7 +36,7 @@ services:
 
 
 - name: Creating image and pushing to ECR
-  image: plugins/ecr
+  image: plugins/drone-ecr
   settings:
     repo: gql-testrepo
     access_key:
