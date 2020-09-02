@@ -34,20 +34,23 @@ services:
   - go build
   - go test
 
-- Creating an Image
+- name: Creating an Image
   image: plugins/ecr
+  environment:
+   PLUGIN_STORAGE_DRIVER: overlay2
+   PLUGIN_CACHE_FROM: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gdp-testrepo:1 
   settings:
-    repo: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gdp-testrepo
-    access_key:
-     from_secret: aws_access_key_id
-    secret_key:
-     from_secret: aws_secret_access_key
-    registry: 044418114861.dkr.ecr.eu-central-1.amazonaws.com
-    auth:
-     from_secret: auth_token
-    dockerfile: /drone/src/drone-ci-conde/docker-projects/Dockerfile
-    region: eu-central-1
-    tags:
+   repo: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gdp-testrepo
+   access_key:
+    from_secret: aws_access_key_id
+   secret_key:
+    from_secret: aws_secret_access_key
+   registry: 044418114861.dkr.ecr.eu-central-1.amazonaws.com
+   auth:
+    from_secret: auth_token
+   dockerfile: /drone/src/drone-ci-conde/docker-projects/Dockerfile
+   region: eu-central-1
+   tags:
     - latest
 
 
