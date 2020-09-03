@@ -39,14 +39,7 @@ steps:
   image: sh4d1/drone-kubernetes
   kubernetes_namespace: default
   kubernetes_template: deployment.yml
-  secrets:
-   KUBERNETES_TOKEN:
-    from_secret: k8s_token
-   KUBERNETES_SERVER:
-    from_secret: k8s_server
-   KUBERNETES_CERT:
-    from_secret: k8s_cert
-   DRONE_SERVICE_ACCOUNT_DEFAULT: drone-deploy
+  secrets: [kubernetes_server, kubernetes_cert, kubernetes_token]
 
 volumes:
 - name: cache
