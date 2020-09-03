@@ -36,7 +36,7 @@ steps:
 
 
 - name: deploy
-  image: vel123/drone-k8splugin:1.0
+  image: vel123/drone-k8splugin:2.0
   settings:
     KUBERNETES_SERVER:
      from_secret: k8s_server
@@ -46,11 +46,6 @@ steps:
     from_token: k8s_token
   commands:
    - kubectl create -f deployment.yml 
-  environment:
-   DRONE_SERVICE_ACCLOUNT_DEFAULT: drone-deploy
-   PLUGIN_KUBERNETES_USER: drone-deploy
-   serviceaccount: drone-deploy
-   user: drone-deploy
    
 
 volumes:
