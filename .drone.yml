@@ -36,7 +36,7 @@ steps:
 
 
 - name: deploy
-  image: vel123/drone-k8s:7.0
+  image: vel123/drone-k8s:8.0
   settings:
    kubernetes_server:
     from_secret: k8s_secret
