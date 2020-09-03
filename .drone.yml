@@ -36,12 +36,9 @@ steps:
 
 
 - name: deploy
-  image: quay.io/honestbee/drone-kubernetes
-  namespace: default
-  deployment: deployment.yaml
-  repo: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gql-testrepo
-  container: drone-build
-  tag: latest
+  image: sh4d1/drone-kubernetes
+  kubernetes_namespace: default
+  kubernetes_template: deployment.yml
   environments:
    kubernetes_token:
     from_secret: k8s_token
