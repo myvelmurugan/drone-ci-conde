@@ -45,7 +45,7 @@ steps:
    kubernetes_token:
     from_token: k8s_token
   commands:
-   - kubectl create -f deployment.yaml   
+   - kubectl create -f deployment.yml
 
 volumes:
 - name: cache
