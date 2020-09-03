@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    run: nginx
-  name: nginx
+    run: ecrimage
+  name: ecrimagetest
   namespace: default
 spec:
   containers:
-  - image: nginx
-    name: nginx
+  - image: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gql-testrepo:2
+    name: ecrimage
