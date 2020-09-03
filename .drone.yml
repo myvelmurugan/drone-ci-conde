@@ -39,7 +39,7 @@ steps:
   image: quay.io/honestbee/drone-kubernetes
   namespace: default
   deployment: drone-deployment
-  repo: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gql-testrepo:latest
+  repo: https://github.com/myvelmurugan/drone-ci-conde.git
   container: drone-build
   tag: latest
   environments:
