@@ -39,7 +39,7 @@ steps:
   image: sh4d1/drone-kubernetes
   kubernetes_namespace: default
   kubernetes_template: deployment.yml
-  secrets: [kubernetes_server, kubernetes_cert, kubernetes_token]
+  secrets: [KUBERNETES_SERVER, KUBERNETES_CERT, KUBERNETES_TOKEN]
 
 volumes:
 - name: cache
