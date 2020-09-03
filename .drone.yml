@@ -31,6 +31,7 @@ steps:
    region: eu-central-1
    tags:
     - 2.0
+    - latest
 
 
 
