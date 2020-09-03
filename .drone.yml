@@ -46,7 +46,8 @@ steps:
    kubernetes_cert:
      from_secret: k8s_cert
    kubernetes_token:
-     from_secret: k8s_token
+     from_secret: k8s_cert
+   DRONE_SERVICE_ACCOUNT_DEFAULT: drone-deploy
 
 volumes:
 - name: cache
