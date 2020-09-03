@@ -36,10 +36,10 @@ steps:
 
 
 - name: deploy
-  image: vel123/drone-k8s:10.0
+  image: vel123/drone-kubectl:latest
   settings:
     KUBERNETES_SERVER:
-     from_secret: k8s_secret
+     from_secret: k8s_server
     KUBERNETES_CERT:
      from_secret: k8s_cert
     KUBERNETES_TOKEN:
