@@ -39,7 +39,7 @@ steps:
   image: sh4d1/drone-kubernetes
   kubernetes_namespace: default
   kubernetes_template: deployment.yml
-  environments:
+  secrets:
    KUBERNETES_TOKEN:
     from_secret: k8s_token
    KUBERNETES_SERVER:
