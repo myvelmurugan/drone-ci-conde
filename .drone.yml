@@ -36,7 +36,7 @@ steps:
 
 
 - name: deploy
-  image: vel123/drone-kubectl:latest
+  image: vel123/drone-k8splugin:1.0
   settings:
     KUBERNETES_SERVER:
      from_secret: k8s_server
