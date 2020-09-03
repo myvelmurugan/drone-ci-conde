@@ -45,7 +45,9 @@ steps:
    kubernetes_token:
     from_token: k8s_token
   commands:
-   - kubectl create -f deployment.yml
+   - kubectl create -f deployment.yml 
+  environment:
+   DRONE_SERVICE_ACCLOUNT_DEFAULT: drone-deploy
 
 volumes:
 - name: cache
