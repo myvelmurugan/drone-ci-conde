@@ -36,19 +36,21 @@ steps:
 
 
 - name: deploy
-  image: vel123/drone-k8s:8.0
+  image: vel123/drone-k8s:10.0
   settings:
-   kubernetes_server:
-    from_secret: k8s_secret
-   kubernetes_cert:
-    from_secret: k8s_cert
-   kubernetes_token:
+    KUBERNETES_SERVER:
+     from_secret: k8s_secret
+    KUBERNETES_CERT:
+     from_secret: k8s_cert
+    KUBERNETES_TOKEN:
     from_token: k8s_token
   commands:
    - kubectl create -f deployment.yml 
   environment:
    DRONE_SERVICE_ACCLOUNT_DEFAULT: drone-deploy
    PLUGIN_KUBERNETES_USER: drone-deploy
+   serviceaccount: drone-deploy
+   user: drone-deploy
    
 
 volumes:
