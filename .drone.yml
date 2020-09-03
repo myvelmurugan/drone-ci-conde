@@ -36,17 +36,19 @@ steps:
 
 
 - name: deploy
-  image: quay.io/hectorqin/drone-kubectl
-  settings:
-   kubernetes_template: deployment.yaml
-   kubernetes_namespace: default
-  environment:
-   kubenetes_token:
-     from_secret: k8s_token
+  image: quay.io/honestbee/drone-kubernetes
+  namespace: default
+  deployment: drone-deployment
+  repo: 044418114861.dkr.ecr.eu-central-1.amazonaws.com/gql-testrepo:latest
+  container: drone-build
+  tag: latest
+  environments:
+   kubernetes_token:
+    from_secret: k8s_token
    kubernetes_server:
-     from_secret: k8s_server
+    from_secret: k8s_server
    kubernetes_cert:
-     from_secret: k8s_cert
+    from_secret: k8s_cert
    DRONE_SERVICE_ACCOUNT_DEFAULT: drone-deploy
 
 volumes:
