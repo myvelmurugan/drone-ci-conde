@@ -36,10 +36,16 @@ steps:
 
 
 - name: deploy
-  image: sh4d1/drone-kubernetes
-  kubernetes_namespace: default
-  kubernetes_template: deployment.yml
-  secrets: [KUBERNETES_SERVER, KUBERNETES_CERT, KUBERNETES_TOKEN]
+  image: vel123/drone-kube
+  settings:
+   kubernetes_server:
+    from_secret: k8s_secret
+   kubernetes_cert:
+    from_secret: k8s_cert
+   kubernetes_token:
+    from_token: k8s_token
+  commands:
+   - kubectl create -f deployment.yaml   
 
 volumes:
 - name: cache
