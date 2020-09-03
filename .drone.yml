@@ -40,11 +40,11 @@ steps:
   kubernetes_namespace: default
   kubernetes_template: deployment.yml
   environments:
-   kubernetes_token:
+   KUBERNETES_TOKEN:
     from_secret: k8s_token
-   kubernetes_server:
+   KUBERNETES_SERVER:
     from_secret: k8s_server
-   kubernetes_cert:
+   KUBERNETES_CERT:
     from_secret: k8s_cert
    DRONE_SERVICE_ACCOUNT_DEFAULT: drone-deploy
 
