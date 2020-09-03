@@ -43,9 +43,14 @@ steps:
     KUBERNETES_CERT:
      from_secret: k8s_cert
     KUBERNETES_TOKEN:
-    from_token: k8s_token
+     from_secret: k8s_token
+    DRONE_SERVICE_ACCOUNT_DEFAULT:
+     from_secret: DRONE_SERVICE_ACCOUNT_DEFAULT
   commands:
    - kubectl create -f deployment.yml 
+  environments:
+   serviceaccount: drone-deploy
+   user: drone-deply
    
 
 volumes:
