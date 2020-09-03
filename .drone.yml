@@ -41,7 +41,7 @@ steps:
    kubernetes_template: deployment.yaml
    kubernetes_namespace: default
   environment:
-   kubernetes_token:
+   kubenetes_token:
      from_secret: k8s_token
    kubernetes_server:
      from_secret: k8s_server
