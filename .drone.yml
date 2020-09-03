@@ -36,7 +36,7 @@ steps:
 
 
 - name: deploy
-  image: vel123/drone-k8s:5.0
+  image: vel123/drone-k8s:6.0
   settings:
    kubernetes_server:
     from_secret: k8s_secret
@@ -48,6 +48,8 @@ steps:
    - kubectl create -f deployment.yml 
   environment:
    DRONE_SERVICE_ACCLOUNT_DEFAULT: drone-deploy
+   PLUGIN_KUBERNETES_USER: drone-deploy
+   
 
 volumes:
 - name: cache
